@@ -17,6 +17,11 @@
       ],
       "ConstraintDescription": "Must specify prod, stage, or sandbox."
     },
+    "BaseZone": {
+      "Description": "Base zone to create route53 zone in",
+      "Default": "nubis.allizom.org",
+      "Type": "String"
+    },
     "KeyName": {
       "Description": "Existing ssh key to deploy to EC2 instances",
       "Type": "String"
@@ -104,28 +109,28 @@
           "ElbHealthTarget": "HTTP:80/"
         }
       }
-    }
-  },
-  "Route53Stack": {
-    "Type": "AWS::CloudFormation::Stack",
-    "Properties": {
-      "TemplateURL": "https://s3.amazonaws.com/nubisproject-stacks/master/route53.template",
-      "TimeoutInMinutes": "60",
-      "Parameters": {
-        "DNSName": {
-          "Ref": "AWS::StackName"
-        },
-        "Environment": {
-          "Ref": "Environment"
-        },
-        "BaseZone": {
-          "Ref": "BaseZone"
-        },
-        "ELBStack": {
-          "Fn::GetAtt": [
-            "ELBStack",
-            "Outputs.DNSName"
-          ]
+    },
+    "Route53Stack": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/nubisproject-stacks/master/route53.template",
+        "TimeoutInMinutes": "60",
+        "Parameters": {
+          "DNSName": {
+            "Ref": "AWS::StackName"
+          },
+          "Environment": {
+            "Ref": "Environment"
+          },
+          "BaseZone": {
+            "Ref": "BaseZone"
+          },
+          "ELBStack": {
+            "Fn::GetAtt": [
+              "ELBStack",
+              "Outputs.DNSName"
+            ]
+          }
         }
       }
     }
