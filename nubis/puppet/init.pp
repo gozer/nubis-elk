@@ -6,3 +6,4 @@
 # which are included in the base image.
 import 'elasticsearch.pp'
 import 'kibana.pp'
+import 'fluentd.pp'
