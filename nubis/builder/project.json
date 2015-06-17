@@ -7,7 +7,7 @@
     ],
     "project_description": "Elasticsearch, Logstash, Kibana for the Nubis Project",
     "project_name": "nubis-elk",
-    "project_version": "0.29",
+    "project_version": "0.30",
     "source_ami_project_name": "nubis-base"
   }
 }
