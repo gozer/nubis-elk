@@ -51,4 +51,5 @@ while [ "$CONSUL_UP" != "0" ]; do
 done
 
 # We restart td-agent no matter what since we have to wait till consul comes up
+$LOGGER "Consul is up, restart td-agent"
 /etc/init.d/td-agent restart
