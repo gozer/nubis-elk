@@ -1,14 +1,14 @@
 [
   {
     "ParameterKey": "ServiceName",
-    "ParameterValue": "skel"
+    "ParameterValue": "elk"
   }, 
   {
     "ParameterKey": "Environment",
     "ParameterValue": "sandbox"
   }, 
   {
-    "ParameterKey": "KeyName",
+    "ParameterKey": "SSHKeyName",
     "ParameterValue": "key"
   },
   {
