@@ -34,7 +34,7 @@ The ServiceName is the name of this service. For Mozilla deployments this should
 ### Environment
 The environment is one of *sandbox*, *stage* or *prod*. For this (and all manual deployments) you will set this to *sandbox*.
 
-### KeyName
+### SSHKeyName
 This is the name of an existing ssh key that you have either created or uploaded to AWS.
 
 ### TechnicalOwner
